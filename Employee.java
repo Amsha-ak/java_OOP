@@ -11,11 +11,11 @@ class Employee{
 	}
 	
 	void calcBonus(){
-		if(basicSalary>=100000){
-			bonus = (basicSalary/100)*10;
+		if(this.basicSalary>=100000){
+			this.bonus = (this.basicSalary/100)*10;
 		}
 		else{
-			bonus = (basicSalary/100)*5;
+			this.bonus = (this.basicSalary/100)*5;
 		}
 	}
 	

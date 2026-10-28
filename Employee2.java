@@ -2,29 +2,32 @@ class Employee2{
 	int id;
 	String name;
 	double basicSalary;
-	double bonus;
+	//double bonus;
 	
 	void setEmployee2(){
-		id = 1000;
-		name = "Amshajiny";
-		basicSalary = 300000;
+		this.id = 1000;
+		this.name = "Amshajiny";
+		this.basicSalary = 300000;
 	}
 	
-	void calcBonus(){
-		if(basicSalary>=100000){
-			bonus = (basicSalary/100)*10;
+	double calcBonus(){
+		double bonus = 0.0;
+		if(this.basicSalary>=100000){
+			bonus = (this.basicSalary/100)*10;
 		}
 		else{
-			bonus = (basicSalary/100)*5;
+			bonus = (this.basicSalary/100)*5;
 		}
+		return bonus;
 	}
 	
 	void display(){
 		System.out.println("ID: "+id);
 		System.out.println("Name: "+name);
-		System.out.println("Salary: "+basicSalary);
-		System.out.println("Bonus: "+bonus);
-		System.out.println("Net: "+(basicSalary+bonus));
+		System.out.println("Salary: "+this.basicSalary);
+		double b =this.calcBonus();
+		System.out.println("Bonus: "+b);
+		System.out.println("Net Salary: "+(b+this.basicSalary));
 	}
 	
 	
