@@ -1,4 +1,4 @@
-class Student4 {
+class Student4{
     int id;
     String name;
     int[] marks;
@@ -9,7 +9,7 @@ class Student4 {
         this.marks = marks;
     }
 
-    int calctotal() {
+    int calTotal() {
         int total = 0;
 
         for (int i = 0; i <this. marks.length; i++) {
@@ -20,7 +20,7 @@ class Student4 {
     }
 
     double calcavg() {
-        return (double) calctotal() / this.marks.length;
+        return (double) calTotal() / this.marks.length;
     }
 
     char getresult() {
@@ -69,7 +69,7 @@ class Student4 {
             );
         }
 
-        System.out.println("Total: " + calctotal());
+        System.out.println("Total: " + calTotal());
         System.out.println("Average: " + calcavg());
         System.out.println("Grade: " + getresult());
     }
