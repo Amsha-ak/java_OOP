@@ -1,92 +1,78 @@
-import java.util.Scanner;
-
-class Student4{
+class Student4 {
     int id;
     String name;
-    int marks[];
+    int[] marks;
 
-    void setStudent4(int id,String name,String subjects[],int marks[]){
+    void setstudent(int id, String name, int[] marks) {
         this.id = id;
         this.name = name;
         this.marks = marks;
     }
 
-    int calTotal() {
+    int calctotal() {
         int total = 0;
 
-        for (int i = 0; i < this.marks.length; i++) {
+        for (int i = 0; i <this. marks.length; i++) {
             total = total + this.marks[i];
         }
 
         return total;
     }
 
-    double calAverage(int total) {
-        double avg = total / (double) this.marks.length;
-        return avg;
+    double calcavg() {
+        return (double) calctotal() / this.marks.length;
     }
 
-    char getResult(double avg) {
-        char result;
+    char getresult() {
+        char result='\u0000';
+		double avg = calcavg();
+		
 
         if (avg >= 75) {
-            result = 'A';
+            result= 'A';
         } else if (avg >= 65) {
-            result = 'B';
+            result= 'B';
         } else if (avg >= 55) {
-            result = 'C';
+            result= 'C';
         } else if (avg >= 45) {
-            result = 'D';
+            result= 'D';
         } else {
-            result = 'F';
+            result= 'F';
+        }
+		return result;
+    }
+
+    String[] getSubjectResult() {
+        String[] subjectResult = new String[marks.length];
+
+        for (int i = 0; i < marks.length; i++) {
+            if (marks[i] >= 35) {
+                subjectResult[i] = "Pass";
+            } else {
+                subjectResult[i] = "Fail";
+            }
         }
 
-        return result;
+        return subjectResult;
     }
-	
-	String[] subjectResult(){
-		String setResult[] = new String[this.marks.length];
 
-		for(int i =0; i < this.marks.length; i++){
-		if (this.marks[i]> 45 ){
-		setResult[i] = "Pass";
-		}
-		else{
-		setResult[i] = "Fail";
-		}
-		}
-		return setResult;
-	}
+    void display( int id, String name,int[] marks) {
+        System.out.println("ID: " + this.id);
+        System.out.println("Name: " + this.name);
 
-    void display() {
-    int total = calTotal();
-    double avg = calAverage(total);
-	String setResult() = this.subjectResult();
-	
-	for (int i = 0; i < marks.length; i++) {
+        String[] subjectResult = getSubjectResult();
+
+        for (int i = 0; i < marks.length; i++) {
             System.out.println(
-		"Subject " + (i + 1) + " Marks: " + marks[i]
+    "Subject " + (i + 1) + " Marks: " + marks[i]
                 + " - " + subjectResult[i]
             );
-    }
+        }
 
-    System.out.println("\n************** STUDENT DETAILS **************");
-    System.out.println("ID            : " + this.id);
-    System.out.println("Name          : " + this.name);
-    System.out.println("***********************************************");
-
-    for (int i = 0; i < marks.length; i++) {
-        char result = getResult(marks[i]);
-
-        System.out.println("Subject       : " + subjects[i]);
-        System.out.println("Marks         : " + this.marks[i]);
-        System.out.println("Grade         : " + result);
-        
-    }
-
-    System.out.println("Total         : " + total);
-    System.out.println("Average       : " + avg);
-    System.out.println("Overall Grade : " + getResult(avg));
-    System.out.println("***********************************************");
+        System.out.println("Total: " + calctotal());
+        System.out.println("Average: " + calcavg());
+        System.out.println("Grade: " + getresult());
     }
 }
+
+
