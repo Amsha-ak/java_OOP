@@ -5,6 +5,6 @@ class B extends A{
 		this.y=y;
 	}
 	void gety(){
-		System.out.println("Cz: "+this.y);
+		System.out.println("By: "+this.y);
 	}
 }
