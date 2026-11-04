@@ -1,8 +1,11 @@
 class B extends A{
 	int x=100;
 	int y;
+	
+	
 	B(){
 		this.y=70;
+		
 	}
 	
 	void getY(){
